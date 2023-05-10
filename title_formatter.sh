@@ -5,7 +5,7 @@ if [ -z "$*" ]; then
 fi
 
 # Transform to lowercase, split by space, concatenate with underscore
-string_of_words=$(echo "$*" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
+string_of_words=$(echo "$*" | tr '[:upper:]' '[:lower:]' | tr -s ' ' '_')
 
 # Output the result and copy to system pasteboard
 echo "$string_of_words" | tee /dev/tty | pbcopy
